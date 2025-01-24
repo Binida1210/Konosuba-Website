@@ -1,0 +1,2 @@
+# konosuba
+Konosuba
