@@ -32,11 +32,12 @@
     font-size: 1.2rem;
     padding-right: 2rem;
     font-weight: 600;
-    color: rgb(51, 64, 70);
+    color: rgb(26, 46, 29);
     transition: all 1s ease;
 }
-.nav-list ul li a:hover{
-    color: #fff;
+.nav-list ul li a:hover,
+.nav-list ul li a:focus{
+    color: #c5cbce;
 }
 .close-btn,
 .open-btn{
@@ -44,6 +45,9 @@
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+}
+.btn-ib{
+    display: inline-block;
 }
 
 @media (max-width: 900px) {
@@ -54,11 +58,18 @@
         display: flex;
         justify-content: center;
         position: fixed;
-        width: 30vw;
+        width: 50vw;
         top: 0;
         left: 0;
         height: 100vh;
         background-color: aliceblue;
+    }
+    .nav-list ul li a{
+        color: rgb(65, 105, 225);
+    }
+    .nav-list ul li a:hover,
+    .nav-list ul li a:focus{
+        color: rgb(211, 102, 94);
     }
     .close-btn{
         position: relative;
@@ -84,38 +95,43 @@
     position: relative;
     top: 12vh;
     margin: 0;
+    padding: 0;
+    width: 100vw;
 }
 .flex-wrap{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding:  4rem;
 }
 .flex-wrap img{
     width: 55vw;
-    justify-self: flex-end;
+    justify-self: end;
     height: auto;
-    padding-bottom: 0;
+    padding: 0 auto;
+    margin: 3rem auto;
 }
 .info{
     display: block;
     text-align: center;
     width: 40vw;
-    margin: auto 3.5rem;
+    padding: 2rem;
+    margin-top: -3rem;
 }
 .info h1{
     color:palevioletred;
     font-size: 2.2rem;
-    margin: 1rem auto;
+    margin: 1.2rem auto;
 }
 .info h2{
     color:rgb(220, 135, 61);
-    font-size: 1.6rem;
-    margin: 1rem auto;
+    font-size: 1.3rem;
+    margin: 1.2rem auto;
 }
 .info p{
     color: rgb(70, 67, 67);
     font-weight: 500;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.9px;
 }
 .btn1{
     color: rgb(240, 240, 240);
@@ -152,24 +168,28 @@
 
 @media (max-width: 900px){
     #home{
-        padding: 2rem;
+        padding: 1rem;
     }
     .flex-wrap{
         flex-direction: column-reverse;
         align-items: center;
+        padding: 3rem;
     }
     .flex-wrap img{
-        width: 62vw;
+        width: 68vw;
+        margin: 0;
     }
     .info{
         width: 76vw;
         font-size: 0.9rem;
+        padding: 0;
+        margin: 0;
     }
     .info h1{
         font-size:1.8rem;
     }
     .info h2{
-        font-size:1.4rem;
+        font-size:1.3rem;
     }
     .info p {
         line-height: 1.2rem;
@@ -178,13 +198,13 @@
 
 /*About Section*/
 #about{
-    padding-top: 4.2rem;
-    height: 100vh;
+    height: auto;
     position: relative;
     top: 12vh;
     background-color: rgba(184, 201, 208, 0.944);
-    padding-bottom: 3rem;
     margin: 0;
+    width: 100vw;
+    text-align: center;
 }
 .about-img img {
     width: 32vw;
@@ -219,25 +239,36 @@
         margin: 2rem 0;
         height: auto;
         margin-bottom: 0;
-        padding: 4rem;
+        padding: 2rem;
     }
     .flex-about{
         flex-direction: column;
         font-size: 1.1rem;
     }
     #about .info{
-        width: 100vw;
+        width: 73vw;
         text-align: center;
         margin: 0;
-        padding: 0 5rem;
         line-height: 1.4rem;
+        letter-spacing: normal;
+    }
+    .info{
+        justify-content: center;
+    }
+    #about .info ul{
+        width: 100%;
     }
     #about .info h1{
         padding: 1rem;
         margin: 1rem;
     }
     #about .info h2{
-        display: none;
+        padding: 1rem;
+    }
+    .about-img{
+        padding: 1.5rem;
+        padding-bottom: 0;
+        margin: 0;
     }
     .about-img img{
         width: 40vw;
@@ -245,13 +276,18 @@
         padding: 0;
         margin: 0;
     }
+    .info-btn{
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
 
 /*Character*/
 #character{
+    width: 100vw;
     background-color: rgba(184, 208, 190, 0.944);
-    padding: 5rem;
-    height: 100vh;
+    padding: 5rem 0;
+    height: auto;
     margin: auto 0;
     position: relative;
     top: 12vh;
@@ -298,9 +334,8 @@
     transform: scale(1.15);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     #character{
-        height: auto;
         margin-top: 0;
     }
     .grid-container{
@@ -308,15 +343,17 @@
         gap: 1.5rem;
     }
     .char-tittle{
-        padding-top: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
     }
 }
 
 /*Gallery Section*/
 #gallery{
+    width: 100vw;
     background-color: rgba(208, 189, 184, 0.944);
     padding: 5rem;
-    height: 100vh;
+    height: auto;
     margin: auto 0;
     position: relative;
     top: 12vh;
@@ -339,14 +376,12 @@
     transition: all 0.4s ease;
     border-radius: 0.35rem;
 }
-.gallery-img:hover{
+.gallery-img:hover,
+.gallery-img:focus{
     transform: translateY(-1rem);
 }
 
 @media (max-width: 900px) {
-    #gallery{
-        height:auto;
-    }
     .gallery-grid{
         background-color: rgba(208, 189, 184, 0.944);
         display: flex;
@@ -354,15 +389,17 @@
         align-items: center;
     }
     .gallery-tittle{
-        padding-top: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
     }
     .gallery-grid img {
-        width: 80vw;
+        width: 68vw;
     }
 }
 
 /*Contact Section*/
 #contact{
+    width: 100vw;
     background-color: rgba(204, 204, 175, 0.93);
     padding: 5rem;
     height: auto;
@@ -400,7 +437,7 @@
     padding: 0.7rem;
 }
 .contact-info i{
-    margin-right: 2rem;
+    margin-right: 1.2rem;
 }
 form{
     padding-top: 2rem;
@@ -417,7 +454,7 @@ textarea{
     height: 6rem;
 }
 .submit-button{
-    width: 50%;
+    width: 6rem;
     color: rgb(255, 251, 251);
     font-weight: 700;
     background-color: rgb(209, 187, 77);
@@ -428,13 +465,17 @@ textarea{
     margin: 1.2rem 0.5rem;
     transition: all 1s ease;
 }
-.submit-button:hover{
+.submit-button:hover,
+.submit-button:focus{
     background-color: rgba(88, 143, 231);
     box-shadow: 0 3px 8px  rgb(209, 187, 77);
     transform: scale(1.1);
 
 }
 @media (max-width:900px) {
+    #contact{
+        padding: 2.5rem;
+    }
     .contact-flex{
         flex-direction: column;
     }
@@ -443,16 +484,24 @@ textarea{
         padding-left: 0.8rem;
     }
     .contact-info-list{
-        width: 68vw;
+        width: 90vw;
     }
     form input,
     textarea{
         width: 60vw;
+        margin-left: 2.2rem;
+    }
+    .contact-tittle{
+        padding-top: 0.5rem;
+    }
+    .submit-button{
+        margin-left: 2.2rem;
     }
 }
 
 /*Footer Section*/
 footer{
+    width: 100vw;
     display: block;
     position: relative;
     bottom: 0;
@@ -478,4 +527,17 @@ footer{
 }
 .social-footer i:hover{
     transform: scale(1.5);
+}
+@media (max-width: 900px) {
+    footer{
+        font-size: 0.8rem;
+    }
+    .footer-container{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .social-footer{
+        font-size: 0.8rem;
+        column-gap: 0.8rem;
+    }
 }
