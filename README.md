@@ -1,2 +1,2 @@
 # konosuba
-Konosuba
+Anime Front End Website Using HTML CSS JS
