@@ -91,7 +91,7 @@
 /*Home Section*/
 #home{
     padding-top: 4.2rem;
-    height: 88vh;
+    height: auto;
     position: relative;
     top: 12vh;
     margin: 0;
